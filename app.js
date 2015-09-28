@@ -3,6 +3,13 @@
 var array = parseStatement(s);
 alert(reduceArray(array));*/
 
+function execute(){
+	var statementField = document.getElementById('statement');
+	var s = statementField.value;
+	var array = parseStatement(s);
+	statementField.value = reduceArray(array);
+}
+
 
 function parseStatement(s){
 	s = s.replace(/\s+/g, '');

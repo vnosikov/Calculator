@@ -21,6 +21,12 @@
 	background-color: #dddddd;
 }
 
+.calc input[type="button"][class="zero"]{
+	width: 110px;
+	margin-right:4px;
+}
+
 .calc input[type="button"][class="equals"]{
 	width: 174px;
+	margin-right:4px;
 }

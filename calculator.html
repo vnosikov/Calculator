@@ -5,8 +5,15 @@
 	</head>
 	<body>
 		<form name="calc" class="calc">
-			<input type="text"></input> <br>
+			<input type="text" id="statement"></input>
 			
+			<br>
+			<input type="button" value="("></input>
+			<input type="button" value=")"></input>
+			<input type="button" value="1/x"></input>
+			<input type="button" value="&plusmn;" disabled="true"></input>
+			
+			<br>
 			<input type="button" value="7"></input>
 			<input type="button" value="8"></input>
 			<input type="button" value="9"></input>
@@ -25,13 +32,12 @@
 			<input type="button" value="-"></input>
 			
 			<br>
-			<input type="button" value="0"></input>
+			<input type="button" value="0" class="zero"></input>
 			<input type="button" value="."></input>
-			<input type="button" value="&plusmn;" disabled="true"></input>
 			<input type="button" value="+"></input>
 			
 			<br>
-			<input type="button" value="=" class="equals"></input>
+			<input type="button" value="=" class="equals" onClick="execute()"></input>
 			<input type="button" value="&larr;"></input>
 		</form>
 		<script src="app.js"></script>	
