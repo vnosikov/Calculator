@@ -1,7 +1,7 @@
-var s = prompt("Input your statement: ");
+/*var s = prompt("Input your statement: ");
 	
 var array = parseStatement(s);
-alert(reduceArray(array));
+alert(reduceArray(array));*/
 
 
 function parseStatement(s){
