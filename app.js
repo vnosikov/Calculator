@@ -23,7 +23,7 @@ function parseStatement(s){
 		cursym = s[i];
 		if(contains(specsyms, cursym)){
 			if(curnum!=''){
-				arr.push(parseInt(curnum));
+				arr.push(parseFloat(curnum));
 				curnum = '';
 			}
 			arr.push(cursym);
@@ -37,7 +37,7 @@ function parseStatement(s){
 	}
 	
 	if(curnum!=''){
-		arr.push(parseInt(curnum));
+		arr.push(parseFloat(curnum));
 	}
 	
 	return arr;
