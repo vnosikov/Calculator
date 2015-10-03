@@ -21,6 +21,20 @@
 	background-color: #dddddd;
 }
 
+.calc input[type="button"]:disabled{
+	width: 45px;
+	height: 45px;
+	background-color: #ddcccc;
+}
+
+
+.calc input[type="button"]:disabled:hover{
+	width: 45px;
+	height: 45px;
+	background-color: #ffdddd;
+	border: 1px solid black;
+}
+
 .calc input[type="button"][class="zero"]{
 	width: 110px;
 	margin-right:4px;
