@@ -25,7 +25,7 @@ function execute(){
 	var $statement = $('#statement')[0];
 	var s = $statement.value;
 	var array = parseStatement(s);
-	statementField.value = reduceArray(array);
+	$statement.value = reduceArray(array);
 }
 
 
