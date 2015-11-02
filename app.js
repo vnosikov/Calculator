@@ -18,7 +18,7 @@ function input(){
 
 function backspace(){
 	var $statement = $('#statement')[0];
-	$statement.value = statementField.value.slice(0,-1);
+	$statement.value = $statement.value.slice(0,-1);
 }
 
 function execute(){
