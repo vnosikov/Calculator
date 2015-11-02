@@ -13,6 +13,11 @@ function parseStatement(s){
 				arr.push(parseFloat(curnum));
 				curnum = '';
 			}
+			//special case for minus as an unary operator
+			else if(cursym === '-'){
+				curnum = cursym;
+				continue;
+			}
 			arr.push(cursym);
 		}
 		else if(contains(numsyms,cursym)){
