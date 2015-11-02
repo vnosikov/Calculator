@@ -3,7 +3,7 @@ function parseStatement(s){
 	var arr = new Array();
 	
 	var curnum='';
-	var specsyms = ['*','/','+','-','(',')'];
+	var specsyms = ['*','/','+','-','^','(',')'];
 	var numsyms = ['1','2','3','4','5','6','7','8','9','0','.'];
 	
 	for (var i=0; i<s.length; i++){
@@ -36,6 +36,7 @@ function reduceArray(arr){
 	}
 	
 	if(!contains(arr, '(')){
+		arr = simplifyWithoutBrackets(arr, ['^']);
 		arr = simplifyWithoutBrackets(arr, ['*', '/']);
 		arr = simplifyWithoutBrackets(arr, ['+', '-']);
 	}
@@ -82,6 +83,8 @@ function eval(op, lv, rv){
 			return lv*rv;
 		case '/':
 			return lv/rv;
+		case '^':
+			return Math.pow(lv,rv);
 		default:
 			throw new Error("False ops identifier");
 	}
