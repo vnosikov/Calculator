@@ -35,7 +35,28 @@ function parseStatement(s){
 	return arr;
 }
 
+function validateAndReduceArray(arr){
+	validateBrackets(arr);
+	return reduceArray(arr);
+}
+
+function validateBrackets(arr){
+	counter=0;
+	for(var i =0; i< arr.length; i++){
+		if(arr[i] == '(') counter++;
+		if(arr[i] == ')') counter--;
+		if(counter<0){
+			throw new Error("Error in an order o a number of brackets");
+		}
+	}
+	
+	if(counter != 0){
+		throw new Error("Error in an order o a number of brackets");
+	}
+}
+
 function reduceArray(arr){
+	
 	if(arr.length == 1){
 		return arr[0];
 	}
