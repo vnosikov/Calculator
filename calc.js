@@ -46,12 +46,12 @@ function validateBrackets(arr){
 		if(arr[i] == '(') counter++;
 		if(arr[i] == ')') counter--;
 		if(counter<0){
-			throw new Error("Error in an order o a number of brackets");
+			throw new Error("Error in an order or a number of brackets");
 		}
 	}
 	
 	if(counter != 0){
-		throw new Error("Error in an order o a number of brackets");
+		throw new Error("Error in an order o ar number of brackets");
 	}
 }
 
