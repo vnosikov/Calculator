@@ -2,9 +2,12 @@ function parseStatement(s){
 	s = s.replace(/\s+/g, '');
 	var arr = new Array();
 	
-	var curnum='';
+	var cursym, curnum='';
 	var specsyms = ['*','/','+','-','^','(',')'];
 	var numsyms = ['1','2','3','4','5','6','7','8','9','0','.'];
+	
+	//We need this var to ensure that minus is a binary operator if it stands after a closing bracketCounter
+	var lastsym = '';
 	
 	for (var i=0; i<s.length; i++){
 		cursym = s[i];
@@ -14,7 +17,7 @@ function parseStatement(s){
 				curnum = '';
 			}
 			//special case for minus as an unary operator
-			else if(cursym === '-'){
+			else if(cursym == '-' && lastsym != ')'){
 				curnum = cursym;
 				continue;
 			}
@@ -26,6 +29,7 @@ function parseStatement(s){
 		else{
 			throw new Error("Incorrect symbol in a statement");
 		}
+		lastsym  = cursym;
 	}
 	
 	if(curnum!=''){
